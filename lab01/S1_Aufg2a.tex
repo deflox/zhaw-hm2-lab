@@ -1,0 +1,55 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+% PACKAGE DECLARATIONS
+
+% unicode encoding
+\usepackage[utf8]{inputenc}
+% to set spacing of page margins
+\usepackage[margin=1cm,nohead]{geometry}
+% to include images
+\usepackage{graphicx}
+% to automatically create paragraphs when doing so in the code
+\usepackage{parskip}
+% math symbols and math features
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% END PACKAGE DECLARATIONS
+
+\begin{document}
+
+\section*{HM2 Serie 1 Aufgabe 2}
+Leo Rudin
+
+\subsection*{a1)}
+
+\(w(x,t) = \sin(x+ct)\)
+
+\(\frac{\partial w}{\partial t} = \cos(x+ct) \cdot c\)
+
+\(\frac{\partial }{\partial t} \left(\frac{\partial w}{\partial t}\right) = -\sin(x+ct) \cdot c^2\)
+
+\(\frac{\partial v}{\partial x} = \cos(x+ct)\)
+
+\(\frac{\partial }{\partial x} \left(\frac{\partial v}{\partial x}\right) = -\sin(x+ct)\)
+
+Wellengleichung ist erfüllt, da:\\
+\(-\sin(x+ct) \cdot c^2 = c^2 \cdot (-\sin(x+ct))\)
+
+\subsection*{a2)}
+
+\(v(x,t) = \sin(x+ct)+\cos(2x+2ct)\)
+
+\(\frac{\partial w}{\partial t} = \cos(x+ct) \cdot c - \sin(2x+2ct) \cdot 2c\)
+
+\(\frac{\partial }{\partial t} \left(\frac{\partial w}{\partial t}\right) = -\sin(x+ct)\cdot c^2 - \cos(2x+2ct) \cdot 4c^2\)
+
+\(\frac{\partial v}{\partial x} = \cos(x+ct) - \sin(2x + 2ct) \cdot 2\)
+
+\(\frac{\partial }{\partial x} \left(\frac{\partial v}{\partial x}\right) = -\sin(x+ct) - \cos(2x+2ct) \cdot 4\)
+
+Wellengleichung ist erfüllt, da:\\
+\(-\sin(x+ct)\cdot c^2 - \cos(2x+2ct) \cdot 4c^2 = c^2 \cdot (-\sin(x+ct) - \cos(2x+2ct) \cdot 4))\)
+
+\end{document}

@@ -1,0 +1,2 @@
+Enable graphical representation:
+Tools > Preferences > IPython console > Graphics > Graphics backend > Backend: Automatic
