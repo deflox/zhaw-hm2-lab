@@ -1,0 +1,178 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+% PACKAGE DECLARATIONS
+
+% unicode encoding
+\usepackage[utf8]{inputenc}
+% to set spacing of page margins
+\usepackage[margin=1cm,nohead]{geometry}
+% to include images
+\usepackage{graphicx}
+% to automatically create paragraphs when doing so in the code
+\usepackage{parskip}
+% math symbols and math features
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% END PACKAGE DECLARATIONS
+
+\begin{document}
+
+\section*{HM2 Serie 2 Aufgabe 1}
+Leo Rudin
+
+\subsection*{a)}
+
+\(f(x_1,x_2) = 
+\begin{pmatrix}
+5x_1x_2 \\
+x_1^2x_2^2+x_1+2x_2 \\
+\end{pmatrix}
+\)
+
+Erstellung der Matrix:
+
+\(
+Df(x_1,x_2) = 
+\begin{pmatrix}
+5x_2 & 5x_1 \\
+2x_1x_2^2+1 & 2x_2x_1^2 + 2 \\
+\end{pmatrix}
+\)
+
+Linearisierung an der Stelle \(x^{(0)} = (1,2)^T\):
+
+\(g(x) = f(x^{(0)}) + Df(x^{(0)}) \cdot (x-x^{(0)})\)
+
+\(
+g(x) =
+\begin{pmatrix}
+10\\
+9\\
+\end{pmatrix}
++
+\begin{pmatrix}
+10 & 5 \\
+9 & 6 \\
+\end{pmatrix}
+\cdot
+\begin{pmatrix}
+x_1 - 1 \\
+x_2 - 2 \\
+\end{pmatrix}
+\)
+
+\(
+g(x) =
+\begin{pmatrix}
+10 + 10(x_1 - 1) + 5(x_2 - 1) \\
+9 + 9(x_1 - 2) + 6(x_2 - 2) \\
+\end{pmatrix}
+\)
+
+\(
+g(x) =
+\begin{pmatrix}
+10 + 10x_1 - 10 + 5x_2 - 5\\
+9 + 9x_1 - 18 + 6x_2 - 12\\
+\end{pmatrix}
+\)
+
+\(
+g(x) =
+\begin{pmatrix}
+10x_1 + 5x_2 - 5\\
+9x_1 + 6x_2 - 21\\
+\end{pmatrix}
+\)
+
+\subsection*{b)}
+
+\(f(x_1,x_2,x_3) = 
+\begin{pmatrix}
+\ln(x_1^2+x_2^2)+x_3^2\\
+\exp(x_2^2+x_3^2)+x_1^2\\
+\frac{1}{(x_3^2+x_1^2)}+x_2^2\\
+\end{pmatrix}
+\)
+
+Erstellung der Matrix:
+
+\(
+Df(x_1,x_2,x_3) =
+\begin{pmatrix}
+\frac{2x_1}{x_1^2+x_2^2} & \frac{2x_2}{x_1^2+x_2^2} & 2x_3\\
+2x_1 & 2x_2\exp(x_2^2+x_3^2) & 2x_3\exp(x_2^2+x_3^2)\\
+-\frac{2x_1}{(x_3^2+x_1^2)^2} & 2x_2 & -\frac{2x_3}{(x_3^2+x_1^2)^2}\\
+\end{pmatrix}
+\)
+
+Linearisierung an der Stelle \(x^{(0)} = (1,2,3)^T\)
+
+\(g(x) = f(x^{(0)}) + Df(x^{(0)}) \cdot (x-x^{(0)})\)
+
+\(
+g(x) =
+\begin{pmatrix}
+10.61\\
+442414.39\\
+4.1\\
+\end{pmatrix}
++
+\begin{pmatrix}
+1 & 6 & -5\\
+0 & 0.33 & 0.64\\
+0 & 0 & -18.75\\
+\end{pmatrix}
+\cdot
+\begin{pmatrix}
+x_1 - 1\\
+x_2 - 2\\
+x_3 - 3\\
+\end{pmatrix}
+\)
+
+\(
+g(x) =
+\begin{pmatrix}
+10.61\\
+442414.39\\
+4.1\\
+\end{pmatrix}
++
+\begin{pmatrix}
+x_1-1+6(x_2 - 2)-5(x_3-3)\\
+0.33(x_2-2)+0.64(x_3-3)\\
+-18.75(x_3-3)\\
+\end{pmatrix}
+\)
+
+\(
+g(x) =
+\begin{pmatrix}
+10.61+x_1-1+6(x_2 - 2)-5(x_3-3)\\
+442414.39+0.33(x_2-2)+0.64(x_3-3)\\
+4.1-18.75(x_3-3)\\
+\end{pmatrix}
+\)
+
+\(
+g(x) =
+\begin{pmatrix}
+10.61+x_1-1+6x_2 - 12-5x_3-15\\
+442414.39+0.33x_2-0.66+0.64x_3-1.92)\\
+4.1-18.75x_3-56.25\\
+\end{pmatrix}
+\)
+
+\(
+g(x) =
+\begin{pmatrix}
+x_1+6x_2-5x_3-17.39\\
+0.33x_2+0.64x_3+442411.81)\\
+18.75x_3-52.15\\
+\end{pmatrix}
+\)
+
+\end{document}
