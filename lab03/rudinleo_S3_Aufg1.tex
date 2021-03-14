@@ -1,0 +1,208 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+% PACKAGE DECLARATIONS
+
+% unicode encoding
+\usepackage[utf8]{inputenc}
+% to set spacing of page margins
+\usepackage[margin=1cm,nohead]{geometry}
+% to include images
+\usepackage{graphicx}
+% to automatically create paragraphs when doing so in the code
+\usepackage{parskip}
+% math symbols and math features
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% END PACKAGE DECLARATIONS
+
+% disable page numbering
+\pagenumbering{gobble}
+
+\begin{document}
+
+\section*{HM2 Serie 3 Aufgabe 1}
+Leo Rudin
+
+\(f(x_1,x_2) = 
+\begin{pmatrix}
+20-18x_1-2x_2^2\\
+-4x_2\cdot (x_1-x_2^2)\\
+\end{pmatrix}
+=
+\begin{pmatrix}
+0\\
+0\\
+\end{pmatrix}
+\)
+
+Berechnung der Jacobi Matrix (mit Python):
+
+\(
+Df(x^{(n)}) =
+\begin{pmatrix}
+-18 & -4x_2\\
+-4x_2 & -4x_1 + 12x_2^2\\
+\end{pmatrix}
+\)
+
+Newton-Verfahren mit Startpunkt: \(x^{(0)} = (1.1,0.9)^T\)
+
+1. Iterationsschritt:
+
+\(Df(x^{(0)})\delta^{(0)} = -f(x^{(0)})\)
+
+\(
+\begin{pmatrix}
+-18 & -3.6\\
+-3.6 & 5.32\\
+\end{pmatrix}
+\cdot
+\delta^{(0)}
+=
+\begin{pmatrix}
+1.42\\
+1.044\\
+\end{pmatrix}
+\)
+
+\(
+\delta^{(0)}
+=
+\begin{pmatrix}
+-0.104\\
+0.126\\
+\end{pmatrix}
+\)
+
+\(x^{(1)} = x^{0} + \delta^{(0)}\)
+
+\(
+x^{(1)}
+=
+\begin{pmatrix}
+1.1\\
+0.9\\
+\end{pmatrix}
++
+\begin{pmatrix}
+-0.104\\
+-0.126\\
+\end{pmatrix}
+=
+\begin{pmatrix}
+0.996\\
+1.026\\
+\end{pmatrix}
+\)
+
+\(||f(x^{(0)})||_2 = 1.762\)
+
+\(||x^{(1)}-x^{(0)}||_2 = 1.267\)
+
+2. Iterationsschritt:
+
+\(Df(x^{(1)})\delta^{(1)} = -f(x^{(1)})\)
+
+\(
+\begin{pmatrix}
+-18 & -4.10\\
+-4.10 & 8.64\\
+\end{pmatrix}
+\cdot
+\delta^{(1)}
+=
+\begin{pmatrix}
+0.03\\
+-0.23\\
+\end{pmatrix}
+\)
+
+\(
+\delta^{(1)}
+=
+\begin{pmatrix}
+0.004\\
+-0.02\\
+\end{pmatrix}
+\)
+
+\(x^{(2)} = x^{1} + \delta^{(1)}\)
+
+\(
+x^{(2)}
+=
+\begin{pmatrix}
+0.996\\
+1.026\\
+\end{pmatrix}
++
+\begin{pmatrix}
+0.004\\
+-0.02\\
+\end{pmatrix}
+=
+\begin{pmatrix}
+0.999\\
+1.0009\\
+\end{pmatrix}
+\)
+
+\(||f(x^{(1)})||_2 = 0.233\)
+
+\(||x^{(2)}-x^{(1)}||_2 = 0.0252\)
+
+3. Iterationsschritt:
+
+\(Df(x^{(2)})\delta^{(1)} = -f(x^{(2)})\)
+
+\(
+\begin{pmatrix}
+-18 & -4.004\\
+-4.004 & 8.023\\
+\end{pmatrix}
+\cdot
+\delta^{(2)}
+=
+\begin{pmatrix}
+0.002\\
+-0.008\\
+\end{pmatrix}
+\)
+
+\(
+\delta^{(2)}
+=
+\begin{pmatrix}
+0.0002\\
+-0.0009\\
+\end{pmatrix}
+\)
+
+\(x^{(3)} = x^{2} + \delta^{(1)}\)
+
+\(
+x^{(3)}
+=
+\begin{pmatrix}
+0.999\\
+1.0009\\
+\end{pmatrix}
++
+\begin{pmatrix}
+0.0002\\
+-0.0009\\
+\end{pmatrix}
+=
+\begin{pmatrix}
+1\\
+1\\
+\end{pmatrix}
+\)
+
+\(||f(x^{(2)})||_2 = 0.008\)
+
+\(||x^{(3)}-x^{(2)}||_2 = 0.0009\)
+
+\end{document}
