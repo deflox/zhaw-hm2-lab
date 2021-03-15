@@ -9,7 +9,7 @@ def lagrange(n,i,x,points):
 
 points = np.array([
     [1,1],
-    [3,3],
+    [3,2],
     [5,1],
 ],dtype=np.float)
 
