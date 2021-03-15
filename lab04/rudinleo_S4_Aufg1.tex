@@ -1,0 +1,55 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+% PACKAGE DECLARATIONS
+
+% unicode encoding
+\usepackage[utf8]{inputenc}
+% to set spacing of page margins
+\usepackage[margin=1cm,nohead]{geometry}
+% to include images
+\usepackage{graphicx}
+% to automatically create paragraphs when doing so in the code
+\usepackage{parskip}
+% math symbols and math features
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% END PACKAGE DECLARATIONS
+
+% disable page numbering
+\pagenumbering{gobble}
+
+\begin{document}
+
+\section*{HM2 Serie 4 Aufgabe 1}
+Leo Rudin
+
+Datenpunkte:
+\begin{itemize}
+    \item \((x_0,y_0) = (0,1013)\)
+    \item \((x_1,y_1) = (2500,747)\)
+    \item \((x_2,y_2) = (5000,540)\)
+    \item \((x_3,y_3) = (10000,226)\)
+\end{itemize}
+
+Lagrange-Interpolation:
+
+\(p(x) = 1013 \cdot l_0(3750) + 747 \cdot l_1(3750) + 540 \cdot l_2(3750) + 226 \cdot l_3(3750)\)
+
+\(l_0(3750) = \frac{(x-x_1)(x-x_2)(x-x_3)}{(x_0-x_1)(x_0-x_2)(x_0-x_3)} 
+= \frac{(3750-2500)(3750-5000)(3750-10000)}{(0-2500)(0-5000)(0-10000)} = -\frac{5}{64}\)
+
+\(l_1(3750) = \frac{(x-x_0)(x-x_2)(x-x_3)}{(x_1-x_0)(x_1-x_2)(x_1-x_3)}
+= \frac{(3750-0)(3750-5000)(3750-10000)}{(2500-0)(2500-5000)(2500-10000)} = \frac{5}{8}\)
+
+\(l_2(3750) = \frac{(x-x_0)(x-x_1)(x-x_3)}{(x_2-x_0)(x_2-x_1)(x_2-x_3)}
+= \frac{(3750-0)(3750-2500)(3750-10000)}{(5000-0)(5000-2500)(5000-10000)} = \frac{15}{32}\)
+
+\(l_3(3750) = \frac{(x-x_0)(x-x_1)(x-x_2)}{(x_3-x_0)(x_3-x_1)(x_3-x_2)}
+= \frac{(3750-0)(3750-2500)(3750-5000)}{(10000-0)(10000-2500)(10000-5000)} = -\frac{1}{64}\)
+
+\(p(x) = 1013 \cdot -\frac{5}{64} + 747 \cdot \frac{5}{8} + 540 \cdot \frac{15}{32} + 226 \cdot -\frac{1}{64} = 637.328125\)
+
+
+\end{document}
