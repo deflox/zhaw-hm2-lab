@@ -19,10 +19,10 @@ v = np.array([1,2,3],dtype=np.float)
 print('\nM[0,1]: \n', M[0,1])
 
 # in jeder zeile das 0lte element selektieren (eine ganze spalte)
-print('\nM[:,1]: \n', M[:,0])
+print('\nM[:,0]: \n', M[:,0])
 
 # in jeder spalte das 0te element selektieren (eine ganze zeile)
-print('\nM[1,:]: \n', M[0,:])
+print('\nM[0,:]: \n', M[0,:])
 
 # diagonale einer nxn matrix
 print('\nnp.diag(M,0): \n', np.diag(M,0))

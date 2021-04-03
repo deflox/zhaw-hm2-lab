@@ -1,0 +1,108 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+% PACKAGE DECLARATIONS
+
+% unicode encoding
+\usepackage[utf8]{inputenc}
+% to set spacing of page margins
+\usepackage[margin=1cm,nohead]{geometry}
+% to include images
+\usepackage{graphicx}
+% to automatically create paragraphs when doing so in the code
+\usepackage{parskip}
+% math symbols and math features
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% END PACKAGE DECLARATIONS
+
+% disable page numbering
+\pagenumbering{gobble}
+
+\begin{document}
+
+\section*{HM2 Serie 5 Aufgabe 1}
+Leo Rudin
+
+Datenpunkte:
+\begin{itemize}
+    \item \((x_0,y_0) = (4,6)\)
+    \item \((x_1,y_1) = (6,3)\)
+    \item \((x_2,y_2) = (8,9)\)
+    \item \((x_3,y_3) = (10,0)\)
+\end{itemize}
+
+Es gibt insgesamt 4 Stützpunkte also ist n = 3, da der Algorithmus mit 0 beginnt.
+
+Es wird nun mit i = 0,1,...,n-1 iteriert:
+
+\textbf{1) Ausrechnen der \(a_i\) Werte:}
+\begin{itemize}
+    \item \(a_0 = y_0 = 6\)
+    \item \(a_1 = y_1 = 3\)
+    \item \(a_2 = y_2 = 9\)
+\end{itemize}
+
+\textbf{2) Ausrechnen der \(h_i\) Werte:}
+\begin{itemize}
+    \item \(h_0 = x_{0+1} - x_0 = 6 - 4 = 2\)
+    \item \(h_1 = x_{1+1} - x_1 = 8 - 6 = 2\)
+    \item \(h_2 = x_{2+1} - x_2 = 10 - 8 = 2\)
+\end{itemize}
+
+\textbf{3) Ausrechnen der \(c_i\) Werte:}
+
+\(c_0 = 0\) \(c_3 = 0\)
+
+Für \(c_1\) und \(c_2\) wird ein Gleichungssystem aufgestellt. Spezialfall, da nicht gilt: \(n \geq 4\) \(\rightarrow\) Es gibt nur genau zwei c-Werte zu berechnen:
+
+\(2(h_0 + h_1)c_1 + h_1c_2 = 3\frac{y_2-y_1}{h_1} - 3\frac{y_1-y_0}{h_0} \rightarrow 8c_1 + 2c_2 = 3\frac{6}{2} - 3\frac{-3}{2} \rightarrow 8c_1 + 2c_2 = 13.5\)
+
+\(h_1c_1 + 2(h_1 + h_2)c_2 = 3\frac{y_3-y_2}{h_2} - 3\frac{y_2-y_1}{h_1} \rightarrow 2c_1 + 8c_2 = 3\frac{-9}{2} - 3\frac{6}{2} \rightarrow 2c_1 + 8c_2 =  -22.5\)
+
+In Matrixform:
+
+\(
+\begin{pmatrix}
+8 & 2\\
+2 & 8\\
+\end{pmatrix}
+\cdot
+\begin{pmatrix}
+c_1\\
+c_2\\
+\end{pmatrix}
+=
+\begin{pmatrix}
+13.5\\
+-22.5\\
+\end{pmatrix}
+\)
+
+\(c_1 = 2.55\) \(c_2 = -3.45\)
+
+\textbf{4) Ausrechnen der \(b_i\) Werte:}
+\begin{itemize}
+    \item \(b_0 = \frac{y_1-y_0}{h_0}-\frac{h_0}{3}(c_1+2c_0) = \frac{3-6}{2}-\frac{2}{3}(2.55) = -3.2\)
+    \item \(b_1 = \frac{y_2-y_1}{h_1}-\frac{h_1}{3}(c_2+2c_1) = \frac{9-3}{2}-\frac{2}{3}(-3.45+2(2.55)) = 1.9\)
+    \item \(b_2 = \frac{y_3-y_2}{h_2}-\frac{h_2}{3}(c_3+2c_2) = 
+    \frac{0-9}{2}-\frac{2}{3}(2(-3.45)) = 0.1\)
+\end{itemize}
+
+\textbf{5. Ausrechnen der \(d_i\) Werte:}
+\begin{itemize}
+    \item \(d_0 = \frac{1}{3h_0}(c_1-c_0) = \frac{1}{6}(2.55-0) = 0.425\)
+    \item \(d_1 = \frac{1}{3h_1}(c_2-c_1) = \frac{1}{6}(-3.45-2.55) = -1\)
+    \item \(d_2 = \frac{1}{3h_2}(c_3-c_2) = \frac{1}{6}(0-(-3.45)) = 0.575\)
+\end{itemize}
+
+\hspace{5mm}
+
+\(S_0(x) = 6 - 3.2(x-4) + 0.425(x-4)^3\)
+
+\(S_1(x) = 3 - 1.9(x-6) + 2.55(x-6)^2 - 1(x-6)^3\)
+
+\(S_2(x) = 9 + 0.1(x-8) -3.45(x-8)^2 + 0.575(x-8)^3\)
+
+\end{document}

@@ -15,6 +15,8 @@ plt.plot(x_values,f(x_values),label='polyfit')
 plt.grid()
 plt.ylim(-100,250)
 
+print(f(2020))
+
 # aufgabe 3b
 print('Schätzwert für 2020:', f(2020))
 
