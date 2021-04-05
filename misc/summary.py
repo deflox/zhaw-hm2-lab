@@ -2,6 +2,9 @@ import sys
 import numpy as np
 import scipy.linalg
 
+#np.shape()
+#unterschied zwischen zeilen und spalten in matrix
+
 # from IT19tb_WIN7_S10_Aufg3 import IT19tb_WIN7_S10_Aufg3a
 
 M = np.array([
