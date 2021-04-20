@@ -1,0 +1,61 @@
+\documentclass{article}
+
+% PACKAGE DECLARATIONS
+
+% unicode encoding
+\usepackage[utf8]{inputenc}
+% to set spacing of page margins
+\usepackage[margin=1cm,nohead]{geometry}
+% to include images
+\usepackage{graphicx}
+% to automatically create paragraphs when doing so in the code
+\usepackage{parskip}
+% math symbols and math features
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% END PACKAGE DECLARATIONS
+
+% disable page numbering
+\pagenumbering{gobble}
+
+\begin{document}
+
+\section*{HM2 Serie 8 Aufgabe 1}
+Leo Rudin
+
+\subsection*{a)}
+Ein einzelnes Teilstück eines Trapez wird folgendermassen berechnet: \(Tf = \frac{T(a) + f(b)}{2} \cdot (b-a)\)
+
+Wenn man nun die einzelnen Stücke in die Formel einsetzt und aufsummiert erhält man automatisch die in der Aufgabe aufgeführt Formel:
+
+\(Tf(h) = \sum_{i=0}^{n-1} \frac{y_i + y_{i+1}}{2} \cdot (x_{x+1} - x_i)\)
+
+\subsection*{b)}
+Eine Beispielsrechnung von \(y_1-y_6\)
+
+Ein Abschnitt wird berechnet durch:
+
+\(\frac{y_i + y_{i+1}}{2} \cdot h\)
+
+Als Summe ergibt das:
+
+\(\frac{y_1 + y_2}{2} \cdot h + \frac{y_2 + y_3}{2} \cdot h + \frac{y_3 + y_4}{2} \cdot h + \frac{y_4 + y_5}{2} \cdot h + \frac{y_5 + y_6}{2} \cdot h\)
+
+Nun kann man \(\frac{1}{2} \cdot h\) ausklammern:
+
+\((y1 + y2 + y2 + y3 + y3 + y4 + y4 + y5 + y5 + y6) \cdot \frac{1}{2} \cdot h\)
+
+Aufteilung der Summen in Gruppen:
+
+\([( y1 + y6 ) + (y2 + y2 + y3 + y3 + y4 + y4 + y5 + y5)] \cdot \frac{1}{2} \cdot h\)
+
+Wenn man nun \(\frac{1}{2}\) wieder reinmultipliziert, fällt jeweils ein Teil der Paare weg:
+
+\([\frac{y1+y2}{2} + (y2 + y3 + y4 + y5)] \cdot h\)
+
+Nun kann der hintere Teil in eine Summe umgewandelt werden:
+
+\([\frac{y1+y2}{2} + \sum_{i=1}^{n-1}(y2 + y3 + y4 + y5)] \cdot h\)
+
+\end{document}
