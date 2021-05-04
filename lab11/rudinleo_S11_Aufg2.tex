@@ -1,0 +1,117 @@
+\documentclass{article}
+
+% PACKAGE DECLARATIONS
+
+% unicode encoding
+\usepackage[utf8]{inputenc}
+% to set spacing of page margins
+\usepackage[margin=1cm,nohead]{geometry}
+% to include images
+\usepackage{graphicx}
+% to automatically create paragraphs when doing so in the code
+\usepackage{parskip}
+% math symbols and math features
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% END PACKAGE DECLARATIONS
+
+% disable page numbering
+\pagenumbering{gobble}
+
+\begin{document}
+
+\section*{HM2 Serie 11 Aufgabe 2}
+Leo Rudin
+
+\(\frac{dy}{dx} = \frac{x^2}{y}\)
+
+\(y'(x) = \frac{x^2}{y(x)}\)
+
+Interval: \(0 \leq x \leq 1.4\)
+
+Startwert: \(y(0) = 2\)
+
+\subsection*{a)}
+
+\(h = 0.7\)
+
+\(x_0 = 0\)
+
+\(y_0 = 2\)
+
+1. Schritt:
+
+\(x_1 = x_0 + h = 0 + 0.7 = 0.7\)
+
+\(y_1 = y_0 + h \cdot f(x_0,y_0) = 2 + 0.7 \cdot \frac{0^2}{2} = 2\)
+
+2. Schritt:
+
+\(x_2 = x_1 + h = 0.7 + 0.7 = 1.4\)
+
+\(y_2 = y_1 + h \cdot f(x_1,y_1) = 2 + 0.7 \cdot \frac{0.7^2}{2} = 2.1715\)
+
+\subsection*{b)}
+
+\(h = 0.7\)
+
+\(x_0 = 0\)
+
+\(y_0 = 2\)
+
+1. Schritt:
+
+\(x_{h/2} = x_0 + \frac{h}{2} = 0 + \frac{0.7}{2} = 0.35\)
+
+\(y_{h/2} = y_0 + \frac{h}{2} \cdot f(x_0,y_0) = 2 + \frac{0.7}{2} \cdot \frac{0^2}{2} = 2\)
+
+\(x_{1} = x_0 + h = 0 + 0.7 = 0.7\)
+
+\(y_{1} = y_0 + h \cdot f(x_{h/2},y_{h/2}) = 2 + 0.7 \cdot \frac{0.35^2}{2} = 2.04\)
+
+2. Schritt:
+
+\(x_{h/2} = x_1 + \frac{h}{2} = 0.7 + \frac{0.7}{2} = 1.05\)
+
+\(y_{h/2} = y_1 + \frac{h}{2} \cdot f(x_1,y_1) = 2.04 + \frac{0.7}{2} \cdot \frac{0.7^2}{2.04} = 2.12\)
+
+\(x_2 = x_1 + h = 0.7 + 0.7 = 1.4\)
+
+\(y_2 = y_1 + h \cdot f(x_{h/2},y_{h/2}) = 2.04 + 0.7 \cdot \frac{1.05^2}{2.12} = 2.40\)
+
+\newpage
+
+\subsection*{c)}
+
+\(h = 0.7\)
+
+\(x_0 = 0\)
+
+\(y_0 = 2\)
+
+1. Schritt:
+
+\(x_1 = x_0 + h = 0 + 0.7 = 0.7\)
+
+\(y_1^{Euler} = y_0 + h \cdot f(x_0,y_0) = 2 + 0.7 \cdot \frac{0^2}{2} = 2\)
+
+\(k_1 = f(x_0,y_0) = \frac{0^2}{2} = 0\)
+
+\(k_2 = f(x_1,y_1^{Euler}) = \frac{0.7^2}{2} = 0.245\)
+
+\(y_1 = y_0 + h \cdot \frac{k_1 + k_2}{2} = 2 + 0.7 \cdot \frac{0+0.245}{2} = 2.08\)
+
+2. Schritt:
+
+\(x_2 = x_1 + h = 0.7 + 0.7 = 1.4\)
+
+\(y_2^{Euler} = y_1 + h \cdot f(x_1,y_1) = 2.08 + 0.7 \cdot \frac{0.7^2}{2.08} = 2.24\)
+
+\(k_1 = f(x_1,y_1) = \frac{0.7^2}{2.08} = 0.24\)
+
+\(k_2 = f(x_2,y_2^{Euler}) = \frac{1.4^2}{2.24} = 0.875\)
+
+\(y_2 = y_1 + h \cdot \frac{k1+k2}{2} = 2.08 + 0.7 \cdot \frac{0.24+0.875}{2} = 2.47\)
+
+\end{document}
