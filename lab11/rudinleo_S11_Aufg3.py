@@ -9,7 +9,7 @@ def rudinleo_S11_Aufg3(f,a,b,n,y0):
     y_modeuler = np.zeros(np.shape(x)[0]-1)
     
     i = 0
-    for xi in x[:-1]:        
+    for xi in x[:-1]:
         # Euler-Verfahren
         y_old = y0 if i == 0 else y_euler[i-1]
         y_euler[i] = y_old + h * f(xi,y_old)
