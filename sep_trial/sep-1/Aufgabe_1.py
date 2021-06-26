@@ -36,7 +36,7 @@ def v(t):
 a=0
 b=30
 h = 10
-n = np.int((b-a)/h)
+n = int((b-a)/h)
 
 summierte_trapezregel_verbose(v, a, b, n)
 print(summierte_trapezregel(v, a, b, n))
