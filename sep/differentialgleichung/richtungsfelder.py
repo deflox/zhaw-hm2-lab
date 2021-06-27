@@ -90,5 +90,5 @@ ymax = 3.5
 hx = 0.25
 hy = 0.25
 
-#richtungsfeld(f, xmin, xmax, ymin, ymax, hx, hy)
-plotField(f, xmin, xmax, 32, 3, plt)
+plot_richtungsfeld(f, xmin, xmax, ymin, ymax, hx, hy)
+#plotField(f, xmin, xmax, 32, 3, plt)

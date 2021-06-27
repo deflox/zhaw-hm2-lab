@@ -13,10 +13,10 @@ f1 = 5*x1*x2
 f2 = x1**2*x2**2+x1+x2
 
 f = sp.Matrix([f1,f2]) # funktionen als sympy matrix zusammenführen
-x_symbols = sp.Matrix([x1,x2]) # x-parameter als matrix zusammenführen
+symbols = sp.Matrix([x1,x2]) # x-parameter als matrix zusammenführen
 
 # jacobi matrix berechnen
-Df = f.jacobian(x_symbols)
+Df = f.jacobian(symbols)
 
 print('Jacobi Matrix: \n', Df)
 print()
@@ -42,3 +42,20 @@ xminusx0 = sp.Matrix([x1-x0[0],x2-x0[1]])
 lin = f_subs.evalf() + (Df_subs.evalf() * xminusx0)
 
 print('Linearisierung der Funktion an der Stelle (1,2): \n', lin)
+
+'''
+Jacobi Matrix mit Konstanten
+'''
+x, y, a, b = sp.symbols('x y a b')
+
+# funktionen definieren um y1... werte zu berechnen
+f1 = 1-x**2-y**2
+f2 = ((x-2)**2)/a+((y-1)**2)/b-1
+
+f = sp.Matrix([f1,f2]) # funktionen als sympy matrix zusammenführen
+symbols = sp.Matrix([x,y]) # x-parameter als matrix zusammenführen
+
+# jacobi matrix berechnen
+Df = f.jacobian(symbols)
+
+print("Jacobi-Matrix mit Symbolen:", Df)

@@ -12,11 +12,11 @@ v1(x) = x(t)
 v2(x) = x'(t)
 
 v1'(x) = v2(x) = x'(t)
-v2'(x) = x''(t)
+v2'(x) = x''(t) = -5*x'(t)^2/m - 570000/m
 
 '''
 
-t0=0    # startzeitpunkt (parameter)
+t0=0   # startzeitpunkt (parameter)
 
 x0=0   # ort (y der ursprungsfunktion)
 v0=100 # geschwindigkeit (y der ersten ableitung)
@@ -24,7 +24,7 @@ v0=100 # geschwindigkeit (y der ersten ableitung)
 m=97000
 
 def f(t,z):
-    return np.array([z[1],(-5*z[1]**2)/m-570000/m])
+    return np.array([z[1],(-5*z[1]**2)/m-570000/m]) # z fängt mit index 0 an
 
 h=0.1
 a=0
@@ -46,4 +46,4 @@ for i in range(0,n):
     k4 = f(t[i]+h, z[:,i]+h*k3)
     z[:,i+1]= z[:,i] + h * (1/6) * (k1+2*k2+2*k3+k4)
     
-plt.plot(t,z[0,:],t,z[1,:]), plt.legend(["Lösung x(t)", "x'(t)"])   
+plt.plot(t,z[0,:],t,z[1,:]), plt.legend(["x(t)", "x'(t)"])   

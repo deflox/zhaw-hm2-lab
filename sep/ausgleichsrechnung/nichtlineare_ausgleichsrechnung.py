@@ -25,10 +25,12 @@ def gauss_newton_d(g, Dg, lam0, tol, max_iter, pmax, damping):
         err_func = np.linalg.norm(g(lam))**2
         increment = np.linalg.norm(delta)
         k = k+1
-        print('Iteration: ',k)
-        print('lambda = ',lam)
-        print('Inkrement = ',increment)
-        print('Fehlerfunktional =', err_func)
+        
+        #print('Iteration: ',k)
+        #print('lambda = ',lam)
+        #print('Inkrement = ',increment)
+        #print('Fehlerfunktional =', err_func)
+        
     return(lam,k)
 
 def gauss_newton(g, Dg, lam0, tol, max_iter):
@@ -49,10 +51,11 @@ def gauss_newton(g, Dg, lam0, tol, max_iter):
         err_func = np.linalg.norm(g(lam))**2
         increment = np.linalg.norm(delta)
         k = k+1
-        print('Iteration: ',k)
-        print('lambda = ',lam)
-        print('Inkrement = ',increment)
-        print('Fehlerfunktional =', err_func)
+        
+        #print('Iteration: ',k)
+        #print('lambda = ',lam)
+        #print('Inkrement = ',increment)
+        #print('Fehlerfunktional =', err_func)
         
     return(lam,k)
 
@@ -90,4 +93,13 @@ pmax = 5 # maximaler dämpfungs potenz
 damping = 1 # schaltet dämpfung an oder aus
 
 # lambda parameter und anzahl iterationen
-[lam_with,n] = gauss_newton_d(g, Dg, lam0, tol, max_iter, pmax, damping)
+lam_with,n = gauss_newton_d(g, Dg, lam0, tol, max_iter, pmax, damping)
+
+print("Lösung für Startwert", lam0, ":", lam_with, "n=", n)
+
+import matplotlib.pyplot as plt
+plt.plot(x,y,'ro',label='Punkte')
+plt.plot(x,f(x,lam_with))
+plt.grid()
+plt.legend()
+plt.show()

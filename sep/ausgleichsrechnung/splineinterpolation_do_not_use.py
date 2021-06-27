@@ -1,6 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+# THIS IS SHIT AND DOES NOT WORK WITH ONLY 3 POINTS
+
 '''
 Calculates the natural cubic spine function for the given set of x and y
 values. It is then used to calculate the yy values for the given set of
