@@ -20,14 +20,14 @@ def newton_verfahren(f_func, Df_func, start, tol):
     return x
 
 # erstelle vektorielle funktion
-x1, x2 = sp.symbols('x1 x2')
-f1 = 5*x1**2-x2**2
-f2 = x2-0.25*(sp.sin(x1)+sp.cos(x2))
+x, y = sp.symbols('x y')
+f1 = (x**2+1)*(x+y)**2-25*x**2
+f2 = (y**2+1)*(x+y)**2-16*y**2
 
 # erstelle jacobi matrix
 f = sp.Matrix([f1,f2])
-x_symbols = sp.Matrix([x1,x2])
-Df = f.jacobian(x_symbols)
+symbols = sp.Matrix([x,y])
+Df = f.jacobian(symbols)
 
 # erstelle numpy funktionen die als parameter 2 dimensionalen numpy array
 # entgegen nehmen

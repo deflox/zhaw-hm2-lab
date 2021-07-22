@@ -46,4 +46,4 @@ for i in range(0,n):
     k4 = f(t[i]+h, z[:,i]+h*k3)
     z[:,i+1]= z[:,i] + h * (1/6) * (k1+2*k2+2*k3+k4)
     
-plt.plot(t,z[0,:],t,z[1,:]), plt.legend(["x(t)", "x'(t)"])   
+plt.plot(t,z[0,:],t,z[1,:]), plt.legend(["x(t)", "x'(t)"])

@@ -4,35 +4,24 @@ import matplotlib.pyplot as plt
 # aufgabe a
 
 # datenpunkte die angenähert werden sollen
-t = np.array([0,10,20,30,40,50,60,70,80,90,100,110],dtype=float)
-y = np.array([76,92,106,123,137,151,179,203,227,250,281,309],dtype=float)
+t = np.array([0,1,2,3,4,5],dtype=float)
+y = np.array([0.54,0.44,0.28,0.18,0.12,0.08],dtype=float)
 
 # ansatzfunktionen
-def p1(t,lam):
-    return lam[0]*t**3+lam[1]*t**2+lam[2]*t+lam[3]
-def p2(t,lam):
-    return lam[0]*t**2+lam[1]*t+lam[2]
+def p(x,lam):
+    return lam[0]*x**4+lam[1]*x**3+lam[2]*x**2+lam[3]*x+lam[4]
 
 # lösung für p1
-basicFunctionsCount = 4
+basicFunctionsCount = 5
 A = np.zeros((len(t), basicFunctionsCount))
-A[:,0] = t**3
-A[:,1] = t**2
-A[:,2] = t
-A[:,3] = 1
+A[:,0] = t**4
+A[:,1] = t**3
+A[:,2] = t**2
+A[:,3] = t
+A[:,4] = 1
 Q,R = np.linalg.qr(A)
-lam_p1 = np.linalg.solve(R,np.matmul(Q.T, y))
-print('Resultat lam für p1(t): \n', lam_p1)
-
-# lösung für p2
-basicFunctionsCount = 3
-A = np.zeros((len(t), basicFunctionsCount))
-A[:,0] = t**2
-A[:,1] = t
-A[:,2] = 1
-Q,R = np.linalg.qr(A)
-lam_p2 = np.linalg.solve(R,np.matmul(Q.T, y))
-print('Resultat lam für p2(t): \n', lam_p2)
+lam_p = np.linalg.solve(R,np.matmul(Q.T, y))
+print('Resultat lam für p(t): \n', lam_p)
 
 plt.plot(t,y,'ro')
 plt.plot(t,p1(t,lam_p1),label='p1(t)')
